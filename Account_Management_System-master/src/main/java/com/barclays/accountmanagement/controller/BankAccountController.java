@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.barclays.accountmanagement.entity.BankAccount;
 import com.barclays.accountmanagement.response.ResponseHandler;
 import com.barclays.accountmanagement.service.BankAccountService;
@@ -28,11 +27,8 @@ public class BankAccountController {
 		} catch (Exception e) {
 			
 			return ResponseHandler.generateResponse(e.getMessage(), HttpStatus.NOT_FOUND, null);
-		}
-		
-		
+		}	
 	}
-	
 	@PostMapping("/createaccount")
 	public ResponseEntity<Object> upsertAccount(@RequestBody BankAccount bankAccount) {
 		
@@ -45,10 +41,6 @@ public class BankAccountController {
 			return ResponseHandler.generateResponse("Failed to create new user", HttpStatus.INTERNAL_SERVER_ERROR, null);
 		}
 		
-	
 	}
-	
-	
-	
 }
 
